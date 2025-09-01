@@ -28,6 +28,8 @@ def go ():
     # Apparently this header needs to be unique in order for the API to accept the request
     headers = {'User-Agent': 'PillScrape/0.0.1'}
 
+    st.session_state["cache_updated"] = True
+
     # Make initial auth request and add the token to future request headers
     try: 
         res = requests.post('https://www.reddit.com/api/v1/access_token', auth=auth, data=data, headers=headers)

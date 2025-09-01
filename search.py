@@ -4,7 +4,7 @@ import streamlit as st
 def q (auth, query, sort_mode, num):
     data = {
         'q': query,
-        'sort': sort_mode,
+        'sort': sort_mode.lower(),
         't': 'all'
     }
 
@@ -12,6 +12,8 @@ def q (auth, query, sort_mode, num):
     headers = {'User-Agent': 'PillScrape/0.0.1'}
 
     res = requests.get('https://www.reddit.com/search.json', auth=auth, params=data, headers=headers)
+
+    st.text(sort_mode)
 
     # data = res.json()
     children = res.json()["data"]["children"]
