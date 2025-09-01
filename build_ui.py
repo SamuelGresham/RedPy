@@ -3,6 +3,9 @@ import pandas as pd
 import numpy as np
 
 def build ():
+
+    st.set_page_config(layout="wide")
+    
     st.title('Reddit Scraper')
     if st.button("Clear cache", type="tertiary"):
         st.cache_data.clear()
