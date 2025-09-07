@@ -23,6 +23,8 @@ if username:
     if query != "":
         search.q(auth, query, sort_selection, query_num)
 
+    
+
 else: 
     fail = st.warning("Authentication error. Check your .env file.")
 
